@@ -17,9 +17,9 @@ namespace Dedovanje {
         public new double BrutoPlaca { get { return letnaPlaca / 12; } }
 
         public void Izpis() {
-            Console.WriteLine("Del id: " + delID);
-            Console.WriteLine("Ime: " + ime);
-            Console.WriteLine("Letna plača:       " + letnaPlaca);
+            Console.WriteLine("Del id: "      + delID);
+            Console.WriteLine("Ime: "         + ime);
+            Console.WriteLine("Letna plača: " + letnaPlaca);
             Console.WriteLine("Bruto plača: " + BrutoPlaca);
             Console.WriteLine("********************************************");
         }//Konec Izpis
