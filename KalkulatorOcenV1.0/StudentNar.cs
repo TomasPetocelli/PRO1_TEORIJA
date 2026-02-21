@@ -5,18 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace KalkulatorOcenV1._0 {
-    internal class StudentMat : StudentABS {
+    internal class StudentNar : StudentABS {
         public override double KoncnaOcena() {
-            return 0.5 * Delni1 + 0.5 * Delni2;
+            return 0.4 * Delni1 + 0.4 * Delni2 + 0.2 * Seminar;
         }//Konec KoncnaOcena
 
         public override string KoncnaCrka() {
             double koncna = KoncnaOcena();
 
             if (koncna >= 90) return "A";
-            else if (koncna >= 83) return "B";
-            else if (koncna >= 76) return "C";
-            else if (koncna >= 65) return "D";
+            else if (koncna >= 80) return "B";
+            else if (koncna >= 70) return "C";
+            else if (koncna >= 60) return "D";
             else return "F";
         }//Konec KoncnaCrka
 
@@ -24,5 +24,5 @@ namespace KalkulatorOcenV1._0 {
             return "Končna ocena: " + KoncnaOcena() +
                    "\nKončna črka: " + KoncnaCrka();
         }//Konec Izpis
-    }//Konec StudentMat
+    }//Konec StudentNar
 }//Konec NameSpace

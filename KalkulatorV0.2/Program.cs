@@ -19,8 +19,7 @@ internal class Program {
             string crka;
 
             //glede na oddelek študenta
-            switch (oddelek)
-            {
+            switch (oddelek) {
                 case 1:
                     Console.Write("Vnesi oceno delnega izpita 1: ");
                     delni1 = int.Parse(Console.ReadLine());
@@ -36,57 +35,42 @@ internal class Program {
 
                     koncna = 0.25 * delni1 + 0.25 * delni2 + 0.3 * seminar + 0.2 * ustna;
 
-                    if (koncna >= 93)
-                    {
+                    if (koncna >= 93) {
                         crka = "A";
-                    }
-                    else if (koncna >= 85)
-                    {
+                    } else if (koncna >= 85) {
                         crka = "B";
-                    }
-                    else if (koncna >= 78)
-                    {
+                    } else if (koncna >= 78) {
                         crka = "C";
-                    }
-                    else if (koncna >= 70)
-                    {
+                    } else if (koncna >= 70) {
                         crka = "D";
-                    }
-                    else
-                    {
+                    } else {
                         crka = "F";
                     }
+                    MessageBox.Show("Končna ocena: " + koncna + Environment.NewLine + "Končna črka: " + crka, "VSŠ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break; //Konec case 1
-
                 case 2:
-                    Console.WriteLine("Vnesi oceno delnega izpita 1");
+                    Console.Write("Vnesi oceno delnega izpita 1");
                     delni1 = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Vnesi oceno delnega izpita 2");
+                    Console.Write("Vnesi oceno delnega izpita 2");
                     delni2 = int.Parse(Console.ReadLine());
 
                     koncna = 0.5 * delni1 + 0.5 * delni2;
 
-                    if (koncna >= 90)
-                    {
+                    if (koncna >= 90) {
                         crka = "A";
-                    }
-                    else if (koncna >= 83)
-                    {
+                    } else if (koncna >= 83) {
                         crka = "B";
-                    }
-                    else if (koncna >= 76)
-                    {
+                    } else if (koncna >= 76) {
                         crka = "C";
-                    }
-                    else if (koncna >= 65)
-                    {
+                    } else if (koncna >= 65) {
                         crka = "D";
-                    }
-                    else
-                    {
+                    } else {
                         crka = "F";
                     }
+                    MessageBox.Show("Končna ocena: " + koncna + Environment.NewLine + "Končna črka: " + crka, "VSŠ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break; //Konec case 2
                 case 3:
                     Console.Write("Vnesi oceno delnega izpita 1: ");
@@ -100,24 +84,15 @@ internal class Program {
 
                     koncna = 0.4 * delni1 + 0.4 * delni2 + 0.2 * seminar;
 
-                    if (koncna >= 90)
-                    {
+                    if (koncna >= 90) {
                         crka = "A";
-                    }
-                    else if (koncna >= 80)
-                    {
+                    } else if (koncna >= 80) {
                         crka = "B";
-                    }
-                    else if (koncna >= 70)
-                    {
+                    } else if (koncna >= 70) {
                         crka = "C";
-                    }
-                    else if (koncna >= 60)
-                    {
+                    } else if (koncna >= 60) {
                         crka = "D";
-                    }
-                    else
-                    {
+                    } else {
                         crka = "F";
                     }
 
