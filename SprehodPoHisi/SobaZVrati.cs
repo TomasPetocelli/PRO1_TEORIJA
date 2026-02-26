@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SprehodPoHisi {
     internal class SobaZVrati : Soba, IZunanjaVrata {
         string vrata;
-        Lokacija lok;
+        public Lokacija lok;
 
         public Lokacija lokacijaVrat() {
             return lok;
@@ -17,7 +17,7 @@ namespace SprehodPoHisi {
             return vrata;
         }//Konec OpisVrat
 
-        public SobaZVrati(string i, string d, bool v):base(i,d) {
+        public SobaZVrati(string i, string d, string v):base(i,d) {
             vrata = v;
         }//Konec Konstruktor SobaZVrati
     }//Konec class SobaZVrati

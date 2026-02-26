@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SprehodPoHisi {
     internal class ZunanjiZVrati:Zunanji,IZunanjaVrata{
         string vrata;
-        Lokacija lok;
+        public Lokacija lok;
 
         public Lokacija lokacijaVrat() {
             return lok;
