@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nogomet", "Nogomet.csproj", "{3C8EF17A-ED92-44E2-9659-AF1B16E04F55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C8EF17A-ED92-44E2-9659-AF1B16E04F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8EF17A-ED92-44E2-9659-AF1B16E04F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8EF17A-ED92-44E2-9659-AF1B16E04F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8EF17A-ED92-44E2-9659-AF1B16E04F55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AE6E29E-F600-43E3-8249-8C43237FED28}
+	EndGlobalSection
+EndGlobal
