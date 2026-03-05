@@ -25,6 +25,70 @@ namespace Nogomet {
             vse[7] = new Ekipa("Islandija  ");
             vse[8] = new Ekipa("Finska     ");
             vse[9] = new Ekipa("Anglija    ");
+            IzdelajTurnir();
         }//Konec konstruktor Liga
+
+        public void IzdelajTurnir() {
+            for (int kolo = 1; kolo <= 9; kolo++) {
+                NapolniPare(kolo);
+            }//Konec for
+        }//Konec IzdelajTurnir
+
+        private void NapolniPare(int kolo) {
+            //zapisi podatek v tabelo pari
+            pari[x, y] = kolo;
+            for (int k = 0; k < 4; k++) {
+                pari[gor[k], dol[k]] = kolo;
+            }//Konec for
+            int temp = y;
+            y = dol[0]; 
+            dol[0] = dol[1]; dol[1] = dol[2]; dol[2] = dol[3]; dol[3] = gor[3]; 
+            gor[3] = gor[2]; gor[2] = gor[1]; gor[1] = gor[0]; gor[0] = temp;
+        }//Konec NapolniPare
+
+        public void IzpisiPare() {
+            for (int k = 1; k <= 9; k++) {
+                Console.WriteLine("Pari kola: " +k);
+                for (int j = 0; j < 10; j++) {
+                    for (int m = 0; m < 10; m++) {
+                        if (pari[j,m] == k) {
+                            Ekipa x = vse[j];
+                            Ekipa y = vse[m];
+                            Console.WriteLine(x.Ime + " : " + y.Ime);
+                        }//Konec if
+                    }//Konec for m
+                }//Konec for j
+                Console.WriteLine("------------------------------------------------");
+            }//Konec for k
+        }//Konec IzpisiPare
+
+        public void VnesiRezultate(int k) {
+            for (int j = 0; j < 10; j++) {
+                for (int m = 0; m < 10; m++) {
+                    if (pari[j, m] == k) {
+                        Ekipa x = vse[j];
+                        Ekipa y = vse[m];
+                        Console.Write("Vnesi rezultat v obliki x:y -> ");
+                        Console.WriteLine(x.Ime + " : " + y.Ime);
+
+                        //3:4
+                        string rezultat = Console.ReadLine();
+                        string[] r = rezultat.Split(":"); //v r[0] = '3' v r[1] = '4'
+                        int goli1 = int.Parse(r[0]);
+                        int goli2 = int.Parse(r[1]);
+
+                        x.VnesiRezultat(goli1, goli2);
+                        y.VnesiRezultat(goli2, goli1);
+
+                    }//Konec if
+                }//Konec for m
+            }//Konec for j
+        }//Konec VnesiRezultate
+
+        public void IzpisLestvice() {
+            for (int k = 0; k < 10; k++) {
+                Console.WriteLine(vse[k].Izpis());
+            }//Konec for
+        }//Konec IzpisLestvice
     }//Konec class Liga
 }
