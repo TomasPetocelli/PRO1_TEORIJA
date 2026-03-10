@@ -5,6 +5,7 @@
             Liga nogomet = new Liga();
             //nogomet.IzpisiPare();
             nogomet.VnesiRezultate(1);
+            nogomet.UrediLestvico();
             nogomet.IzpisLestvice();
 
         }//Konec Main

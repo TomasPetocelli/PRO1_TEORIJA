@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Nogomet {
     internal class Liga {
         Ekipa[] vse = new Ekipa[10];
+        Ekipa[] original = new Ekipa[10];
         int[,] pari = new int[10,10]; //ce je pari[3,4]=8, pomeni da se ekipa vse[3] in vse[4] srecata v 8. kolu turnirja
 
         int x = 0;
@@ -31,6 +32,10 @@ namespace Nogomet {
         public void IzdelajTurnir() {
             for (int kolo = 1; kolo <= 9; kolo++) {
                 NapolniPare(kolo);
+            }//Konec for
+
+            for (int k = 0; k <= 9; k++) {
+                original[k] = vse[k];
             }//Konec for
         }//Konec IzdelajTurnir
 
@@ -66,8 +71,8 @@ namespace Nogomet {
             for (int j = 0; j < 10; j++) {
                 for (int m = 0; m < 10; m++) {
                     if (pari[j, m] == k) {
-                        Ekipa x = vse[j];
-                        Ekipa y = vse[m];
+                        Ekipa x = original[j];
+                        Ekipa y = original[m];
                         Console.Write("Vnesi rezultat v obliki x:y -> ");
                         Console.WriteLine(x.Ime + " : " + y.Ime);
 
@@ -90,5 +95,25 @@ namespace Nogomet {
                 Console.WriteLine(vse[k].Izpis());
             }//Konec for
         }//Konec IzpisLestvice
+
+        public void UrediLestvico() {
+            for (int i = 0; i < vse.Length -1; i++) {
+            //poisci najmanjsi element od i do konca tabele
+                Ekipa min = vse[i];
+                int minIndeks = i;
+                for (int j = i + 1; j < vse.Length; j++) {
+                    if (vse[j].BoljsaEkipa(min)) {
+                        min = vse[j];
+                        minIndeks = j;
+                    }//Konec if
+                }//Konec for j
+                //najmanjsi eleent preostanka tabele je a[minIndeks]
+                //zamenjaj ga s prvim elementom preostanka tabele
+                Ekipa temp = vse[i];
+                vse[i] = vse[minIndeks];
+                vse[minIndeks] = temp;
+                IzpisLestvice();
+            }//Konec for i
+        }//Konec UrediLestvico
     }//Konec class Liga
 }

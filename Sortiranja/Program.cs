@@ -2,7 +2,7 @@
     internal class Program {
         static void Main(string[] args) {
             int[] tab = { 7, 3, 9, 8, 1, 12, 10, 4 };
-            Vstavljanje(tab);
+            Bubble(tab);
             Console.WriteLine("Urejena tabela");
             Izpis(tab);
 
@@ -65,5 +65,19 @@
                 Izpis(a);
             }//Konec for k
         }//Konec Vstavljanje
+
+        //----------------------------------------BUBBLE SORT----------------------------------------
+        static void Bubble(int[] a) {
+            for (int i = a.Length-1; i >=0; i--) { 
+                for (int j = 0; j < i; j++) { 
+                    if (a[j] > a[j + 1]) {
+                        int temp = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = temp;
+                    }//Konec if
+                }//Konec for j
+                Izpis(a);
+            }//Konec for i
+        }//Konec Bubble
     }//Konec class Program
 }
